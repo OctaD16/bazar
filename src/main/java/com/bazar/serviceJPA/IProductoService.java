@@ -19,4 +19,7 @@ public interface IProductoService {
 
     //metodo de eliminacion
     public  void deleteProducto(Long id);
- }
+
+    //Disponibilidad de Productos menores a 5
+    List<Producto> productoDisponible();
+}

@@ -1,5 +1,6 @@
 package com.bazar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,12 +21,14 @@ public class Venta {
     private Double total;
 
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name="venta_producto",
                 joinColumns = {@JoinColumn(name="venta_id")},
                 inverseJoinColumns = {@JoinColumn(name = "producto_id")})
+
     private List<Producto> listaProductos = new ArrayList<>();
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn(name = "id_cliente")
     private Cliente unCliente;
 }

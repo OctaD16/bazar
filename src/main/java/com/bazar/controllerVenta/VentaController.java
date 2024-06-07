@@ -1,11 +1,13 @@
 package com.bazar.controllerVenta;
 
+import com.bazar.model.Producto;
 import com.bazar.model.Venta;
 import com.bazar.serviceJPA.IVentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class VentaController {
@@ -32,7 +34,8 @@ public class VentaController {
 
     //edicion de venta
     @PutMapping("/ventas/editar/{codigo_venta}")
-    public Venta editarVenta(@PathVariable (name = "codigo_venta") Long id, Venta venta){
+    public Venta editarVenta(@PathVariable (name = "codigo_venta") Long id,
+                             @RequestBody Venta venta){
         return vService.updateVenta(id, venta);
     }
 
@@ -42,4 +45,9 @@ public class VentaController {
         vService.deleteVenta(id);
     }
 
+    //obtencion de productos de una determinada venta
+    @GetMapping("/ventas/productos/{codigo_venta}")
+    public List<Producto> ventaProductos(@PathVariable (name = "codigo_venta") Long codigo_venta){
+        return vService.ventaProductos(codigo_venta);
+    }
 }

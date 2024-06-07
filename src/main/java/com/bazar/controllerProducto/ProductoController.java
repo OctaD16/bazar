@@ -32,7 +32,20 @@ public class ProductoController {
 
     //edicion de producto
     @PutMapping("/productos/editar/{id_producto}")
-    public Producto editarProducto(@PathVariable (name = "id_producto") Long id, Producto producto){
+    public Producto editarProducto(@PathVariable (name = "id_producto") Long id,
+                                   @RequestBody Producto producto){
         return pService.updateProducto(id, producto);
+    }
+
+    //eliminacion de producto
+    @DeleteMapping("/productos/eliminar/{id_producto}")
+    public void eliminarProducto(@PathVariable (name = "id_producto") Long id_producto){
+        pService.deleteProducto(id_producto);
+    }
+
+    //Disponibilidad de Productos menores a 5
+    @GetMapping("/productos/falta_stock")
+    public List<Producto> listaProducto(){
+        return pService.productoDisponible();
     }
 }

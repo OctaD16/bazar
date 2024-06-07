@@ -1,5 +1,6 @@
 package com.bazar.serviceJPA;
 
+import com.bazar.model.Producto;
 import com.bazar.model.Venta;
 
 import java.util.List;
@@ -19,5 +20,8 @@ public interface IVentaService {
 
     //metodo de eliminacion de venta
     public void deleteVenta(Long id);
+
+    //obtencion de productos de una determinada venta
+    public List<Producto> ventaProductos(Long id);
 
 }

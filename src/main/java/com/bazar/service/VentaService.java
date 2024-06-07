@@ -1,5 +1,6 @@
 package com.bazar.service;
 
+import com.bazar.model.Producto;
 import com.bazar.model.Venta;
 import com.bazar.repository.IVentaRepository;
 import com.bazar.serviceJPA.IVentaService;
@@ -41,5 +42,16 @@ public class VentaService implements IVentaService {
     @Override
     public void deleteVenta(Long id) {
         vRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Producto> ventaProductos(Long id) {
+        Optional<Venta> opt = vRepo.findById(id);
+        if (opt.isPresent()){
+            Venta venta = opt.get();
+            List<Producto> listaProducto = venta.getListaProductos();
+            return listaProducto;
+        }
+        return null;
     }
 }

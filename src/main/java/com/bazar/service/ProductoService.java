@@ -6,6 +6,7 @@ import com.bazar.serviceJPA.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,5 +43,19 @@ public class ProductoService implements IProductoService {
     @Override
     public void deleteProducto(Long id) {
         pRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Producto> productoDisponible() {
+        List<Producto> listaCompleta = this.getAllProductos();
+
+        //aquellos productos cuya cantidad sea menor a 5 seran incluidos en esta nueva lista
+        List<Producto> listaReducida = new ArrayList<>();
+        for (Producto prod : listaCompleta){
+            if (prod.getCantidad_disponible()<=5){
+                listaReducida.add(prod);
+            }
+        }
+        return listaReducida;
     }
 }
