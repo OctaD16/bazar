@@ -1,6 +1,3 @@
-¡Claro! Aquí tienes un ejemplo de cómo podría verse tu archivo README.md para tu proyecto en GitHub:
-
----
 
 # API Rest de Bazar
 
@@ -47,4 +44,3 @@ Se proporciona un archivo de base de datos en la carpeta `DataBase` que contiene
 ## Nota
 Este proyecto ha sido realizado gracias a los conocimientos aportados en el curso de SpringBoot de TodoCode.
 
-Recuerda ajustar este README.md según las especificaciones exactas de tu proyecto y cualquier otra información relevante que quieras agregar. ¡Espero que te sea útil!
