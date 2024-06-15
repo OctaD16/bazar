@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,15 +19,13 @@ public class Venta {
     private LocalDate fecha_venta;
     private Double total;
 
-    @ManyToMany
-    @JsonIgnore
-    @JoinTable(name="venta_producto",
-                joinColumns = {@JoinColumn(name="venta_id")},
-                inverseJoinColumns = {@JoinColumn(name = "producto_id")})
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "venta_producto",
+            joinColumns = {@JoinColumn(name = "venta_id", referencedColumnName = "codigo_venta")},
+            inverseJoinColumns = {@JoinColumn(name = "producto_id", referencedColumnName = "codigo_producto")})
+    private List<Producto> listaProductos;
 
-    private List<Producto> listaProductos = new ArrayList<>();
-
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente unCliente;
 }

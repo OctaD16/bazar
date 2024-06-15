@@ -1,10 +1,10 @@
 package com.bazar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -20,10 +20,6 @@ public class Producto {
     private Double costo;
     private Double cantidad_disponible;
 
-    @ManyToMany(mappedBy = "listaProductos")
-    private List<Venta> ventaList = new ArrayList<>();
-
-
-
-
+    @ManyToMany(mappedBy = "listaProductos", fetch = FetchType.LAZY)
+    private List<Venta> ventaList;
 }

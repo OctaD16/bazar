@@ -1,8 +1,10 @@
 package com.bazar.serviceJPA;
 
+import com.bazar.dto.ClienteVentaProducto;
 import com.bazar.model.Producto;
 import com.bazar.model.Venta;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface IVentaService {
@@ -24,4 +26,9 @@ public interface IVentaService {
     //obtencion de productos de una determinada venta
     public List<Producto> ventaProductos(Long id);
 
+    //Sumatoria de monto en una fecha determinada
+    public String sumatoria(LocalDate fechaVenta);
+
+    //Venta mas alta
+    public ClienteVentaProducto ventaMasAlta();
 }

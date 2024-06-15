@@ -1,11 +1,13 @@
 package com.bazar.controllerVenta;
 
+import com.bazar.dto.ClienteVentaProducto;
 import com.bazar.model.Producto;
 import com.bazar.model.Venta;
 import com.bazar.serviceJPA.IVentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +17,7 @@ public class VentaController {
     private IVentaService vService;
 
     //creacion de venta
-    @PostMapping("/venta/crear")
+    @PostMapping("/ventas/crear")
     public Venta crearVenta(@RequestBody Venta venta){
         return vService.saveVenta(venta);
     }
@@ -27,7 +29,7 @@ public class VentaController {
     }
 
     //lectura de venta especifica
-    @GetMapping("/venta/{codigo_venta}")
+    @GetMapping("/ventas/{codigo_venta}")
     public Venta traerVenta (@PathVariable (name = "codigo_venta") Long id){
         return vService.getVenta(id);
     }
@@ -49,5 +51,17 @@ public class VentaController {
     @GetMapping("/ventas/productos/{codigo_venta}")
     public List<Producto> ventaProductos(@PathVariable (name = "codigo_venta") Long codigo_venta){
         return vService.ventaProductos(codigo_venta);
+    }
+
+    //Sumatoria de monto en una fecha determinada
+    @GetMapping("/ventas/monto/{fecha_venta}")
+    public String sumatoriaDeMonto(@PathVariable (name = "fecha_venta")LocalDate fecha_venta){
+        return vService.sumatoria(fecha_venta);
+    }
+
+    //
+    @GetMapping("/ventas/mayor_venta")
+    public ClienteVentaProducto mayorVenta(){
+        return vService.ventaMasAlta();
     }
 }
