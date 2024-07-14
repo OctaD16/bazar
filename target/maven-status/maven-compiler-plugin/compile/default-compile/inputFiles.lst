@@ -1,0 +1,17 @@
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\BazarApplication.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\controllerCliente\ClienteController.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\controllerProducto\ProductoController.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\controllerVenta\VentaController.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\dto\ClienteVentaProducto.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\model\Cliente.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\model\Producto.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\model\Venta.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\repository\IClienteRepository.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\repository\IProductoRepository.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\repository\IVentaRepository.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\service\ClienteService.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\service\ProductoService.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\service\VentaService.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\serviceJPA\IClienteService.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\serviceJPA\IProductoService.java
+C:\Programacion 3\Projects\Personal Projects\bazar\src\main\java\com\bazar\serviceJPA\IVentaService.java
