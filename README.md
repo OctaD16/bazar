@@ -43,7 +43,7 @@ Para ejecutar la aplicación utilizando Docker, sigue estos pasos:
 1. Asegúrate de tener Docker y Docker Compose instalados en tu máquina.
 2. Clona el repositorio:
    ```sh
-   git clone https://github.com/tuusuario/tu-repositorio.git
+   git clone https://github.com/OctaD16/bazar.git
    ```
 3. Navega al directorio del proyecto:
    ```sh
