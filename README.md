@@ -56,7 +56,7 @@ Para ejecutar la aplicación utilizando Docker, sigue estos pasos:
 5. La aplicación estará disponible en `http://localhost:8080`.
 
 ## Motivo
-Este proyecto fue realizado gracias a los conocimientos aportados en el curso de Desarrollo de APIS en Java con SpringBoot.
+Este proyecto fue realizado gracias a los conocimientos aportados en el curso de Desarrollo de APIS en Java con SpringBoot de TodoCode.
 ## Licencia
 
 Este proyecto está bajo la licencia [MIT](LICENSE).
